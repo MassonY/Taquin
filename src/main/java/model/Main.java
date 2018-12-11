@@ -54,8 +54,9 @@ public class Main extends Application {
     private void initRootLayout(){
         try {
             FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/root.fxml")));
 
-            loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("root.fxml")));
+
             rootLayout = loader.load();
 
             Scene scene = new Scene(rootLayout);
@@ -99,7 +100,7 @@ public class Main extends Application {
         try
         {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource(root)));
+            loader.setLocation(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml/"+root)));
             AnchorPane contenu = loader.load();
 
             controller = loader.getController();
